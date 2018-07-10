@@ -1,6 +1,5 @@
 package accounts;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import constants.constants;
@@ -62,4 +61,15 @@ public class Account_Manager {
 		 return constants.NON_ILLIGAL_ACCOUNT_LOG;
 	 
 	 }
+	 
+	public int searchFirstName(String string) {
+		int count = 0;
+		for (Map.Entry<Integer, Account> entry : hmap.entrySet()) {
+		    if (entry.getValue().getFirstName().equals(string))
+		    {
+		    	count++;
+		    }
+		}
+	 return count;
+	}
 }
