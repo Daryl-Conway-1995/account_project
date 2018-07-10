@@ -62,14 +62,17 @@ public class Account_Manager {
 	 
 	 }
 	 
-	public int searchFirstName(String string) {
+	/*public int searchFirstName(String string) {
 		int count = 0;
 		for (Map.Entry<Integer, Account> entry : hmap.entrySet()) {
-		    if (entry.getValue().getFirstName().equals(string))
-		    {
-		    	count++;
-		    }
+			if (entry.getValue().getFirstName().equals(string)) {
+				count++;
+			}
 		}
-	 return count;
-	}
+		return count;
+	}*/
+	 
+	 public int searchFirstName(String string) {
+		 return (int) hmap.values().stream().filter(e -> e.getFirstName().equals(string)).count();
+	 }
 }
